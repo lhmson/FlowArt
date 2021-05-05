@@ -166,10 +166,7 @@ namespace FlowArt
         {
             base.OnMdiChildActivate(evt);
             FlowMap w = this.ActiveMdiChild as FlowMap;
-            if (w != null)
-            {
-                w.View.UpdateFormInfo();
-            }
+            w?.View.UpdateFormInfo();
         }
 
 
@@ -182,7 +179,7 @@ namespace FlowArt
         public void SetStatusZoom(float scale)
         {
             String m = Math.Round((double)scale * 100, 3).ToString();
-            statusZoomPanel.Text = m + "%";
+            statusZoomPanel.Text = m + @"%";
         }
 
 
